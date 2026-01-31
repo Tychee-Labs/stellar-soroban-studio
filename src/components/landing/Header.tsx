@@ -116,7 +116,7 @@ export const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <MagneticButton variant="ghost" href="#">
+            <MagneticButton variant="ghost" href="/docs">
               View Docs
             </MagneticButton>
             <MagneticButton variant="primary" href="https://www.npmjs.com/package/@tychee/sdk">
@@ -164,7 +164,7 @@ export const Header = () => {
                 );
               })}
               <div className="flex flex-col gap-2 pt-4 mt-2 border-t border-border">
-                <MagneticButton variant="ghost" href="#">
+                <MagneticButton variant="ghost" href="/docs">
                   View Docs
                 </MagneticButton>
                 <MagneticButton variant="primary" href="https://www.npmjs.com/package/@tychee/sdk">
