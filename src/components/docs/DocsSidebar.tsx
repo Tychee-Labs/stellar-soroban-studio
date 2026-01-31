@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, Search, Book, Code, Shield, Rocket, FileText, Layers, CreditCard, Key, Lock, AlertTriangle, Puzzle, CheckSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
-
+import { Link } from "react-router-dom";
 interface NavItem {
   title: string;
   href: string;
@@ -116,22 +116,26 @@ const CollapsibleGroup = ({ group, activeItem, onItemClick, defaultOpen = true }
                 const isActive = activeItem === item.href;
                 const ItemIcon = item.icon;
                 
-                return (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      onItemClick(item.href);
-                    }}
-                    className={cn(
-                      "relative flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-all duration-200",
-                      isActive
-                        ? "text-foreground font-medium"
-                        : "text-muted-foreground hover:text-foreground hover:bg-secondary/20"
-                    )}
-                  >
-                    {/* Active indicator bar */}
+                  return (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      onClick={() => onItemClick(item.href)}
+                      className={cn(
+                        "relative flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-all duration-200",
+                        isActive
+                          ? "text-foreground font-medium"
+                          : "text-muted-foreground hover:text-foreground hover:bg-secondary/20"
+                      )}
+                    >
+                      {/* Active indicator bar */}
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeNavItem"
+                          className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-5 bg-primary rounded-full"
+                          transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                        />
+                      )}
                     {isActive && (
                       <motion.div
                         layoutId="activeNavItem"
@@ -152,17 +156,17 @@ const CollapsibleGroup = ({ group, activeItem, onItemClick, defaultOpen = true }
                       />
                     )}
                     
-                    {ItemIcon && (
-                      <ItemIcon className={cn(
-                        "w-3.5 h-3.5 shrink-0",
-                        isActive ? "text-primary" : "text-muted-foreground"
-                      )} />
-                    )}
-                    <span className="relative">{item.title}</span>
-                  </a>
-                );
-              })}
-            </div>
+                      {ItemIcon && (
+                        <ItemIcon className={cn(
+                          "w-3.5 h-3.5 shrink-0",
+                          isActive ? "text-primary" : "text-muted-foreground"
+                        )} />
+                      )}
+                      <span className="relative">{item.title}</span>
+                    </Link>
+                  );
+                })}
+              </div>
           </motion.div>
         )}
       </AnimatePresence>
