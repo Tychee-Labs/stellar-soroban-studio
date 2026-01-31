@@ -187,12 +187,12 @@ const UseCaseCard = ({
     <motion.div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative group cursor-pointer"
+      className="relative group cursor-pointer h-full"
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
     >
       {/* Card */}
-      <div className="relative h-full bg-card border border-border rounded-2xl overflow-hidden transition-all duration-500 group-hover:border-primary/30">
+      <div className="relative h-full min-h-[280px] bg-card border border-border rounded-2xl overflow-hidden transition-all duration-500 group-hover:border-primary/30 flex flex-col">
         {/* Background gradient */}
         <div
           className={`absolute inset-0 bg-gradient-to-br ${useCase.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
@@ -211,7 +211,7 @@ const UseCaseCard = ({
           }}
         />
 
-        <div className="relative p-6 lg:p-8">
+        <div className="relative p-6 lg:p-8 flex flex-col flex-1">
           {/* Illustration */}
           <div className="relative h-24 mb-6">
             <Illustration />
@@ -234,8 +234,8 @@ const UseCaseCard = ({
             </p>
           </motion.div>
 
-          {/* Hover indicator */}
-          <div className="flex items-center gap-2 mt-2">
+          {/* Hover indicator - pushed to bottom */}
+          <div className="flex items-center gap-2 mt-auto pt-4">
             <motion.div
               className="h-px bg-primary/50 origin-left"
               initial={{ width: 0 }}
@@ -291,7 +291,7 @@ export const UseCasesSection = () => {
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {useCases.map((useCase, index) => (
-            <AnimatedSection key={useCase.title} delay={index * 0.1}>
+            <AnimatedSection key={useCase.title} delay={index * 0.1} className="h-full">
               <UseCaseCard useCase={useCase} index={index} />
             </AnimatedSection>
           ))}
