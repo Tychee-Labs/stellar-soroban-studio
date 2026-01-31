@@ -7,6 +7,7 @@ import { SecuritySection } from "@/components/landing/SecuritySection";
 import { DeveloperSection } from "@/components/landing/DeveloperSection";
 import { UseCasesSection } from "@/components/landing/UseCasesSection";
 import { AccountAbstractionSection } from "@/components/landing/AccountAbstractionSection";
+import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
 import { PricingSection } from "@/components/landing/PricingSection";
 import { Integration } from "@/components/landing/Integration";
 import { CTA } from "@/components/landing/CTA";
@@ -25,6 +26,7 @@ const Index = () => {
         <DeveloperSection />
         <UseCasesSection />
         <AccountAbstractionSection />
+        <TestimonialsSection />
         <PricingSection />
         <Integration />
         <CTA />
