@@ -11,6 +11,7 @@ import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
 import { PricingSection } from "@/components/landing/PricingSection";
 import { FAQSection } from "@/components/landing/FAQSection";
 import { Integration } from "@/components/landing/Integration";
+import { TeamSection } from "@/components/landing/TeamSection";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
 
@@ -34,6 +35,7 @@ const Index = () => {
         <PricingSection />
         <FAQSection />
         <Integration />
+        <TeamSection />
         <FinalCTA />
       </main>
       <Footer />
