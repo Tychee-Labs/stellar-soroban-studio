@@ -105,20 +105,10 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-wrap items-center gap-4 mb-8"
             >
-              <MagneticButton variant="primary" href="#">
+              <MagneticButton variant="primary" href="https://www.npmjs.com/package/@tychee/sdk">
                 Install SDK
                 <ArrowRight size={16} />
               </MagneticButton>
-              <MagneticButton variant="secondary" href="#">
-                <Play size={16} />
-                Live Demo
-              </MagneticButton>
-              <a
-                href="#"
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors link-underline ml-2"
-              >
-                Read Security Model
-              </a>
             </motion.div>
 
             {/* Trust Pills */}

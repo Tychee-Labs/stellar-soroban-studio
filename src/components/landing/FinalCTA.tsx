@@ -127,7 +127,7 @@ export const FinalCTA = () => {
               viewport={{ once: true }}
               className="flex flex-wrap items-center justify-center gap-4"
             >
-              <MagneticButton variant="primary" href="#">
+              <MagneticButton variant="primary" href="https://www.npmjs.com/package/@tychee/sdk">
                 <Terminal size={18} />
                 Install Tychee SDK
                 <ArrowRight size={16} />

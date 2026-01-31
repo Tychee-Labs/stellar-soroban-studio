@@ -117,7 +117,7 @@ export const Header = () => {
             <MagneticButton variant="ghost" href="#">
               View Docs
             </MagneticButton>
-            <MagneticButton variant="primary" href="#">
+            <MagneticButton variant="primary" href="https://www.npmjs.com/package/@tychee/sdk">
               Get Started
             </MagneticButton>
           </div>
@@ -165,7 +165,7 @@ export const Header = () => {
                 <MagneticButton variant="ghost" href="#">
                   View Docs
                 </MagneticButton>
-                <MagneticButton variant="primary" href="#">
+                <MagneticButton variant="primary" href="https://www.npmjs.com/package/@tychee/sdk">
                   Get Started
                 </MagneticButton>
               </div>
