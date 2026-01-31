@@ -40,10 +40,10 @@ export const Hero = () => {
       <div className="absolute inset-0">
         {/* Noise texture */}
         <div className="absolute inset-0 noise-texture" />
-        
+
         {/* Base gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background" />
-        
+
         {/* Radial glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] rounded-full bg-primary/[0.03] blur-[150px]" />
       </div>
@@ -72,9 +72,7 @@ export const Hero = () => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary/50 backdrop-blur-sm mb-8"
             >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm text-muted-foreground">
-                Web3 Card Tokenization SDK
-              </span>
+              <span className="text-sm text-muted-foreground">Web3 Card Tokenization SDK</span>
             </motion.div>
 
             {/* Headline */}
@@ -84,9 +82,9 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-6xl font-bold leading-[1.1] tracking-tight mb-6"
             >
-              <span className="text-foreground">Tokenize cards on Stellar.</span>
+              <span className="text-foreground">Securing Cards Globally</span>
               <br />
-              <span className="text-gradient">Securely. Client-side.</span>
+              <span className="text-gradient">Powered by Stellar.</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -96,8 +94,8 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl"
             >
-              Tychee SDK encrypts card data locally and stores only encrypted payloads
-              on Soroban — built for fast integration and user-owned security.
+              Tychee SDK encrypts card data locally and stores only encrypted payloads on Soroban — built for fast
+              integration and user-owned security.
             </motion.p>
 
             {/* CTAs */}
@@ -139,9 +137,7 @@ export const Hero = () => {
                   className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/60 bg-card/50 backdrop-blur-sm"
                 >
                   <pill.icon size={12} className="text-primary" />
-                  <span className="text-xs text-muted-foreground font-medium">
-                    {pill.label}
-                  </span>
+                  <span className="text-xs text-muted-foreground font-medium">{pill.label}</span>
                 </motion.div>
               ))}
             </motion.div>
