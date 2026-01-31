@@ -2,21 +2,23 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Twitter, Linkedin } from "lucide-react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
 interface TeamMember {
   name: string;
   role: string;
   initials: string;
+  image?: string;
   twitter?: string;
   linkedin?: string;
 }
 
 const teamMembers: TeamMember[] = [
-  { name: "Shankar Warang", role: "Architect", initials: "SW", twitter: "#", linkedin: "#" },
-  { name: "Shreyas Thakur", role: "Intern", initials: "ST", twitter: "#", linkedin: "#" },
-  { name: "Aniket Raikar", role: "Wizard", initials: "AR", twitter: "#", linkedin: "#" },
-  { name: "Rama Shankar Jha", role: "Artist", initials: "RJ", twitter: "#", linkedin: "#" },
+  { name: "Shankar Warang", role: "Architect", initials: "SW", image: "", twitter: "#", linkedin: "#" },
+  { name: "Shreyas Thakur", role: "Intern", initials: "ST", image: "", twitter: "#", linkedin: "#" },
+  { name: "Aniket Raikar", role: "Wizard", initials: "AR", image: "", twitter: "#", linkedin: "#" },
+  { name: "Rama Shankar Jha", role: "Artist", initials: "RJ", image: "", twitter: "#", linkedin: "#" },
 ];
 
 interface TeamCardProps {
@@ -88,25 +90,31 @@ const TeamCard = ({ member, index }: TeamCardProps) => {
           )}
           style={{ transform: "translateZ(20px)" }}
         >
-          {/* Avatar placeholder */}
+          {/* Avatar */}
           <div className="relative mb-6">
-            <div 
+            <Avatar 
               className={cn(
-                "w-24 h-24 rounded-full",
-                "bg-gradient-to-br",
-                gradientColors[index % gradientColors.length],
-                "flex items-center justify-center",
-                "border border-border/50",
+                "w-32 h-32",
+                "border-2 border-border/50",
                 "group-hover:border-primary/40 transition-colors duration-500"
               )}
-              style={{ 
-                background: `linear-gradient(${gradientAngles[index % gradientAngles.length]}deg, hsl(14 89% 56% / 0.3) 0%, hsl(14 89% 56% / 0.05) 50%, transparent 100%)` 
-              }}
             >
-              <span className="text-2xl font-semibold text-foreground/80 group-hover:text-primary transition-colors duration-300">
+              <AvatarImage 
+                src={member.image} 
+                alt={member.name}
+                className="object-cover"
+              />
+              <AvatarFallback 
+                className={cn(
+                  "text-3xl font-semibold text-foreground/80 group-hover:text-primary transition-colors duration-300"
+                )}
+                style={{ 
+                  background: `linear-gradient(${gradientAngles[index % gradientAngles.length]}deg, hsl(14 89% 56% / 0.3) 0%, hsl(14 89% 56% / 0.05) 50%, transparent 100%)` 
+                }}
+              >
                 {member.initials}
-              </span>
-            </div>
+              </AvatarFallback>
+            </Avatar>
             
             {/* Subtle ring animation on hover */}
             <div className="absolute inset-0 rounded-full border-2 border-primary/0 group-hover:border-primary/30 group-hover:scale-110 transition-all duration-500" />
