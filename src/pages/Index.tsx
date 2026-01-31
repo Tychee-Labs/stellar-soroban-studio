@@ -16,7 +16,10 @@ import { Footer } from "@/components/landing/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden relative">
+      {/* Global grain overlay - subtle texture across entire page */}
+      <div className="global-grain" aria-hidden="true" />
+      
       <GradientBlob />
       <Header />
       <main>
