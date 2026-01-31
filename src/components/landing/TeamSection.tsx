@@ -19,10 +19,10 @@ interface TeamMember {
 }
 
 const teamMembers: TeamMember[] = [
-  { name: "Shankar Warang", role: "Architect", initials: "SW", image: shankarPhoto, twitter: "#", linkedin: "#" },
-  { name: "Shreyas Thakur", role: "Intern", initials: "ST", image: shreyasPhoto, twitter: "#", linkedin: "#" },
-  { name: "Aniket Raikar", role: "Wizard", initials: "AR", image: aniketPhoto, twitter: "#", linkedin: "#" },
-  { name: "Rama Shankar Jha", role: "Artist", initials: "RJ", image: ramaPhoto, twitter: "#", linkedin: "#" },
+  { name: "Shankar Warang", role: "Architect", initials: "SW", image: shankarPhoto, twitter: "https://x.com/WarangShankar", linkedin: "https://www.linkedin.com/in/shankar-warang" },
+  { name: "Shreyas Thakur", role: "Intern", initials: "ST", image: shreyasPhoto, twitter: "https://x.com/Shreyas__Thakur", linkedin: "https://www.linkedin.com/in/shreyas-thakur/" },
+  { name: "Aniket Raikar", role: "Wizard", initials: "AR", image: aniketPhoto, twitter: "https://x.com/AniketRaikar06", linkedin: "https://www.linkedin.com/in/aniket-raikar-0ba023243/" },
+  { name: "Rama Shankar Jha", role: "Artist", initials: "RJ", image: ramaPhoto, twitter: "https://x.com/rama_vats", linkedin: "https://www.linkedin.com/in/rama-jha" },
 ];
 
 interface TeamCardProps {
@@ -81,12 +81,12 @@ const TeamCard = ({ member, index }: TeamCardProps) => {
         {/* Gradient border effect */}
         <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-primary/20 via-border to-border opacity-100 group-hover:opacity-0 transition-opacity duration-500" />
         <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-br from-primary/60 via-primary/30 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        
+
         {/* Glow effect on hover */}
         <div className="absolute -inset-2 rounded-3xl bg-primary/20 blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
-        
+
         {/* Card content */}
-        <div 
+        <div
           className={cn(
             "relative rounded-2xl bg-card p-8 h-full",
             "flex flex-col items-center text-center",
@@ -96,30 +96,30 @@ const TeamCard = ({ member, index }: TeamCardProps) => {
         >
           {/* Avatar */}
           <div className="relative mb-6">
-            <Avatar 
+            <Avatar
               className={cn(
                 "w-32 h-32",
                 "border-2 border-border/50",
                 "group-hover:border-primary/40 transition-colors duration-500"
               )}
             >
-              <AvatarImage 
-                src={member.image} 
+              <AvatarImage
+                src={member.image}
                 alt={member.name}
                 className="object-cover"
               />
-              <AvatarFallback 
+              <AvatarFallback
                 className={cn(
                   "text-3xl font-semibold text-foreground/80 group-hover:text-primary transition-colors duration-300"
                 )}
-                style={{ 
-                  background: `linear-gradient(${gradientAngles[index % gradientAngles.length]}deg, hsl(14 89% 56% / 0.3) 0%, hsl(14 89% 56% / 0.05) 50%, transparent 100%)` 
+                style={{
+                  background: `linear-gradient(${gradientAngles[index % gradientAngles.length]}deg, hsl(14 89% 56% / 0.3) 0%, hsl(14 89% 56% / 0.05) 50%, transparent 100%)`
                 }}
               >
                 {member.initials}
               </AvatarFallback>
             </Avatar>
-            
+
             {/* Subtle ring animation on hover */}
             <div className="absolute inset-0 rounded-full border-2 border-primary/0 group-hover:border-primary/30 group-hover:scale-110 transition-all duration-500" />
           </div>
@@ -143,14 +143,14 @@ const TeamCard = ({ member, index }: TeamCardProps) => {
               className="group/icon relative p-2 rounded-lg transition-all duration-300"
             >
               <div className="absolute inset-0 rounded-lg bg-primary/0 group-hover/icon:bg-primary/10 transition-colors duration-300" />
-              <Twitter 
-                size={20} 
+              <Twitter
+                size={20}
                 className="relative text-muted-foreground group-hover/icon:text-primary group-hover/icon:scale-110 transition-all duration-300"
               />
               {/* Icon glow */}
               <div className="absolute inset-0 rounded-lg opacity-0 group-hover/icon:opacity-100 transition-opacity duration-300 blur-md bg-primary/30" />
             </a>
-            
+
             <a
               href={member.linkedin}
               target="_blank"
@@ -158,8 +158,8 @@ const TeamCard = ({ member, index }: TeamCardProps) => {
               className="group/icon relative p-2 rounded-lg transition-all duration-300"
             >
               <div className="absolute inset-0 rounded-lg bg-primary/0 group-hover/icon:bg-primary/10 transition-colors duration-300" />
-              <Linkedin 
-                size={20} 
+              <Linkedin
+                size={20}
                 className="relative text-muted-foreground group-hover/icon:text-primary group-hover/icon:scale-110 transition-all duration-300"
               />
               {/* Icon glow */}
@@ -192,12 +192,12 @@ export const TeamSection = () => {
           >
             Our Team
           </motion.span>
-          
+
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Meet the{" "}
             <span className="text-gradient">Builders</span>
           </h2>
-          
+
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
             A small team crafting the future of secure Web3 card tokenization.
           </p>

@@ -31,10 +31,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: MessageCircle, href: "#", label: "Discord" },
+  { icon: Github, href: "https://github.com/Tychee-Labs", label: "GitHub" },
+  { icon: Twitter, href: "https://x.com/TycheeSDK", label: "Twitter" },
+  // { icon: Linkedin, href: "#", label: "LinkedIn" },
+  // { icon: MessageCircle, href: "#", label: "Discord" },
 ];
 
 export const Footer = () => {
