@@ -266,7 +266,7 @@ const UseCaseCard = ({
 
 export const UseCasesSection = () => {
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
+    <section id="use-cases" className="py-24 lg:py-32 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.03] rounded-full blur-[150px]" />

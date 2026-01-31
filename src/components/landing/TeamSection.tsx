@@ -174,7 +174,7 @@ const TeamCard = ({ member, index }: TeamCardProps) => {
 
 export const TeamSection = () => {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden">
+    <section id="team" className="relative py-24 md:py-32 overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]" />
