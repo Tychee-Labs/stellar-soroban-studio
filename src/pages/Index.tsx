@@ -3,6 +3,7 @@ import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
 import { CredibilityStrip } from "@/components/landing/CredibilityStrip";
 import { Features } from "@/components/landing/Features";
+import { SecuritySection } from "@/components/landing/SecuritySection";
 import { DeveloperSection } from "@/components/landing/DeveloperSection";
 import { Integration } from "@/components/landing/Integration";
 import { CTA } from "@/components/landing/CTA";
@@ -17,6 +18,7 @@ const Index = () => {
         <Hero />
         <CredibilityStrip />
         <Features />
+        <SecuritySection />
         <DeveloperSection />
         <Integration />
         <CTA />
