@@ -5,6 +5,7 @@ import { CredibilityStrip } from "@/components/landing/CredibilityStrip";
 import { Features } from "@/components/landing/Features";
 import { SecuritySection } from "@/components/landing/SecuritySection";
 import { DeveloperSection } from "@/components/landing/DeveloperSection";
+import { UseCasesSection } from "@/components/landing/UseCasesSection";
 import { Integration } from "@/components/landing/Integration";
 import { CTA } from "@/components/landing/CTA";
 import { Footer } from "@/components/landing/Footer";
@@ -20,6 +21,7 @@ const Index = () => {
         <Features />
         <SecuritySection />
         <DeveloperSection />
+        <UseCasesSection />
         <Integration />
         <CTA />
       </main>
