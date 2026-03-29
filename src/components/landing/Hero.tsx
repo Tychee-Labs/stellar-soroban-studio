@@ -109,6 +109,10 @@ export const Hero = () => {
                 Install SDK
                 <ArrowRight size={16} />
               </MagneticButton>
+              <MagneticButton variant="secondary" href="#demo">
+                <Play size={16} />
+                Try Demo
+              </MagneticButton>
             </motion.div>
 
             {/* Trust Pills */}

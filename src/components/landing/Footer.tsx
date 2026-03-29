@@ -33,7 +33,7 @@ const footerLinks = {
 const socialLinks = [
   { icon: Github, href: "https://github.com/Tychee-Labs", label: "GitHub" },
   { icon: Twitter, href: "https://x.com/TycheeSDK", label: "Twitter" },
-  // { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/tychee-labs", label: "LinkedIn" },
   // { icon: MessageCircle, href: "#", label: "Discord" },
 ];
 
