@@ -33,7 +33,11 @@ const footerLinks = {
 const socialLinks = [
   { icon: Github, href: "https://github.com/Tychee-Labs", label: "GitHub" },
   { icon: Twitter, href: "https://x.com/TycheeSDK", label: "Twitter" },
-  { icon: Linkedin, href: "https://www.linkedin.com/company/tychee-labs", label: "LinkedIn" },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/company/tychee-labs",
+    label: "LinkedIn",
+  },
   // { icon: MessageCircle, href: "#", label: "Discord" },
 ];
 
@@ -69,9 +73,7 @@ export const Footer = () => {
                     e.currentTarget.style.display = "none";
                   }}
                 />
-                <motion.div
-                  className="absolute inset-0 bg-primary/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                />
+                <motion.div className="absolute inset-0 bg-primary/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <span className="text-xl font-bold text-foreground">Tychee</span>
             </a>

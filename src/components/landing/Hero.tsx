@@ -72,7 +72,9 @@ export const Hero = () => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary/50 backdrop-blur-sm mb-8"
             >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm text-muted-foreground">NextGen Secure Card Handling</span>
+              <span className="text-sm text-muted-foreground">
+                NextGen Secure Card Handling
+              </span>
             </motion.div>
 
             {/* Headline */}
@@ -94,8 +96,9 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl"
             >
-              Tychee SDK encrypts card data locally and stores only encrypted payloads on chain — built for fast
-              integration and user-owned security.
+              Tychee SDK encrypts card data locally and stores only encrypted
+              payloads on chain — built for fast integration and user-owned
+              security.
             </motion.p>
 
             {/* CTAs */}
@@ -105,7 +108,10 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-wrap items-center gap-4 mb-8"
             >
-              <MagneticButton variant="primary" href="https://www.npmjs.com/package/@tychee/sdk">
+              <MagneticButton
+                variant="primary"
+                href="https://www.npmjs.com/package/@tychee/sdk"
+              >
                 Install SDK
                 <ArrowRight size={16} />
               </MagneticButton>
@@ -131,7 +137,9 @@ export const Hero = () => {
                   className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/60 bg-card/50 backdrop-blur-sm"
                 >
                   <pill.icon size={12} className="text-primary" />
-                  <span className="text-xs text-muted-foreground font-medium">{pill.label}</span>
+                  <span className="text-xs text-muted-foreground font-medium">
+                    {pill.label}
+                  </span>
                 </motion.div>
               ))}
             </motion.div>
