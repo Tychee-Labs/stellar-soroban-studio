@@ -14,10 +14,15 @@ import { Integration } from "@/components/landing/Integration";
 import { TeamSection } from "@/components/landing/TeamSection";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
+import SEO from "@/components/SEO";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden relative">
+      <SEO 
+        title="Stellar Soroban Studio" 
+        description="The unified platform for Stellar Soroban Smart Contract Development" 
+      />
       {/* Global grain overlay - subtle texture across entire page */}
       <div className="global-grain" aria-hidden="true" />
 

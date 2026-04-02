@@ -36,6 +36,7 @@ const contentMap: Record<string, React.ComponentType> = {
   'guides/nextjs': NextjsGuideContent,
   'guides/testnet-mainnet': TestnetMainnetContent,
 };
+import SEO from "@/components/SEO";
 
 const Docs = () => {
   const params = useParams();
@@ -58,6 +59,10 @@ const Docs = () => {
   
   return (
     <DocsLayout activeSlug={`/docs/${slug}`}>
+      <SEO 
+        title={`Documentation: ${slug} - Stellar Soroban`} 
+        description="Documentation for Stellar Soroban integration." 
+      />
       <ContentComponent />
     </DocsLayout>
   );
