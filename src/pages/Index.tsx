@@ -14,6 +14,7 @@ import { Integration } from "@/components/landing/Integration";
 import { TeamSection } from "@/components/landing/TeamSection";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
+import WaitlistForm from "@/components/landing/WaitlistForm";
 import SEO from "@/components/SEO";
 
 const Index = () => {
@@ -41,6 +42,7 @@ const Index = () => {
         <FAQSection />
         <Integration />
         <TeamSection />
+        <WaitlistForm />
         <FinalCTA />
       </main>
       <Footer />
