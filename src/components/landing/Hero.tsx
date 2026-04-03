@@ -54,26 +54,28 @@ export const Hero = () => {
         style={{ x: glowX, y: glowY }}
       />
 
-      {/* 3D Visual */}
-      <div className="absolute inset-0 lg:left-1/2 opacity-60 lg:opacity-100">
+
+
+      {/* 3D Visual Background Slice */}
+      <div className="absolute inset-y-0 right-0 w-full lg:w-[65%] h-full z-[1] hidden lg:block pointer-events-auto">
         <HeroVisual />
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 pointer-events-none">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="max-w-2xl">
+          <div className="max-w-2xl pointer-events-auto pt-12 pb-24">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary/50 backdrop-blur-sm mb-8"
+              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/[0.03] shadow-[0_0_20px_rgba(242,87,43,0.05)] backdrop-blur-md mb-8"
             >
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm text-muted-foreground">
-                NextGen Secure Card Handling
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(242,87,43,0.8)]" />
+              <span className="text-sm font-medium tracking-wide text-primary uppercase letter-spacing-[0.1em]">
+                Enterprise-Grade Card Security
               </span>
             </motion.div>
 
@@ -82,11 +84,11 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-6xl font-bold leading-[1.1] tracking-tight mb-6"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-[4.2rem] font-extrabold leading-[1.05] tracking-tighter mb-8"
             >
-              <span className="text-foreground">Securing Cards Globally</span>
-              <br />
-              <span className="text-gradient">Powered by Self-Custody.</span>
+              <span className="text-foreground block">Securing Cards </span>
+              <span className="text-foreground block">Globally.</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-orange-400 to-primary block pb-2">Powered by Self-Custody.</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -145,8 +147,8 @@ export const Hero = () => {
             </motion.div>
           </div>
 
-          {/* Right side spacer for 3D visual */}
-          <div className="hidden lg:block" />
+          {/* Right side spacer to allow pointer events through to the WebGL background */}
+          <div className="hidden lg:block w-full h-[700px] pointer-events-none" />
         </div>
       </div>
 
