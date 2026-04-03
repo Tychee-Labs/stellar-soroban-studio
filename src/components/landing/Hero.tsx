@@ -115,7 +115,7 @@ export const Hero = () => {
                 Install SDK
                 <ArrowRight size={16} />
               </MagneticButton>
-              <MagneticButton variant="secondary" href="#demo">
+              <MagneticButton variant="secondary" href="https://app.tychee.store">
                 <Play size={16} />
                 Try Demo
               </MagneticButton>
