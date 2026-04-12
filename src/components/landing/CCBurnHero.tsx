@@ -161,7 +161,6 @@ export default function CardScannerDemo() {
     cardLineWidth: 0,
   });
 
-  const isPlayingRef = useRef(true);
   const rafCardRef = useRef<number>(0);
   const rafScannerRef = useRef<number>(0);
   const rafThreeRef = useRef<number>(0);
