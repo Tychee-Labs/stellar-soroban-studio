@@ -22,9 +22,6 @@ interface Particle2D {
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
-const CODE_CHARS =
-  "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789(){}[]<>;:,._-+=!@#$%^&*|\\/\"'`~?";
-
 const CARD_IMAGES = [
   "https://cdn.prod.website-files.com/68789c86c8bc802d61932544/689f20b55e654d1341fb06f8_4.1.png",
   "https://cdn.prod.website-files.com/68789c86c8bc802d61932544/689f20b5a080a31ee7154b19_1.png",
@@ -354,37 +351,6 @@ export default function CardScannerDemo() {
     document.body.style.cursor = "";
   }, [updateSpeedIndicator]);
 
-  // ─── Controls ────────────────────────────────────────────────────────────
-
-  const toggleAnimation = useCallback(() => {
-    const s = streamState.current;
-    s.isAnimating = !s.isAnimating;
-    isPlayingRef.current = s.isAnimating;
-    if (s.isAnimating && cardLineRef.current) {
-      cardLineRef.current.style.animation = "none";
-    }
-  }, []);
-
-  const resetPosition = useCallback(() => {
-    const s = streamState.current;
-    s.position = s.containerWidth;
-    s.velocity = 120;
-    s.direction = -1;
-    s.isAnimating = true;
-    s.isDragging = false;
-    isPlayingRef.current = true;
-    if (cardLineRef.current) {
-      cardLineRef.current.style.animation = "none";
-      cardLineRef.current.style.transform = `translateX(${s.position}px)`;
-      cardLineRef.current.classList.remove("dragging");
-    }
-    updateSpeedIndicator();
-  }, [updateSpeedIndicator]);
-
-  const changeDirection = useCallback(() => {
-    streamState.current.direction *= -1;
-    updateSpeedIndicator();
-  }, [updateSpeedIndicator]);
 
   // ─── Three.js particle system ─────────────────────────────────────────────
 
