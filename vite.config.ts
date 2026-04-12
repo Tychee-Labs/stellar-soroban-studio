@@ -1,11 +1,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
+import { componentTagger } from "lovable-tagger";
 
 import Sitemap from "vite-plugin-sitemap";
 
 // https://vitejs.dev/config/
-export default defineConfig(() => {
+export default defineConfig(({ mode }) => {
   const hostname = process.env.VITE_SITE_URL || "https://tychee.store";
 
   return {
@@ -18,6 +19,7 @@ export default defineConfig(() => {
     },
     plugins: [
       react(),
+      mode === "development" && componentTagger(),
       Sitemap({
         hostname,
         dynamicRoutes: [

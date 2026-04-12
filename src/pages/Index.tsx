@@ -25,6 +25,8 @@ const Index = () => {
         description="The unified platform for Stellar Soroban Smart Contract Development" 
       />
 
+      {/* Global grain overlay - subtle texture across entire page */}
+      <div className="global-grain" aria-hidden="true" />
 
       <GradientBlob />
       <Header />
