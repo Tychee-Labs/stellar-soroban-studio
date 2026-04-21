@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ReactNode, useRef } from "react";
-import { cn } from "@/lib/utils";
+import { cn, isExternalUrl } from "@/lib/utils";
 
 interface MagneticButtonProps {
   children: ReactNode;
@@ -8,6 +8,7 @@ interface MagneticButtonProps {
   variant?: "primary" | "secondary" | "ghost";
   onClick?: () => void;
   href?: string;
+  disableInteractiveMotion?: boolean;
 }
 
 export const MagneticButton = ({
@@ -16,6 +17,7 @@ export const MagneticButton = ({
   variant = "primary",
   onClick,
   href,
+  disableInteractiveMotion = false,
 }: MagneticButtonProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
@@ -54,24 +56,27 @@ export const MagneticButton = ({
   };
 
   const Component = href ? motion.a : motion.button;
+  const external = isExternalUrl(href);
 
   return (
     <motion.div
       ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{ x: xSpring, y: ySpring }}
+      onMouseMove={disableInteractiveMotion ? undefined : handleMouseMove}
+      onMouseLeave={disableInteractiveMotion ? undefined : handleMouseLeave}
+      style={disableInteractiveMotion ? undefined : { x: xSpring, y: ySpring }}
       className="inline-block"
     >
       <Component
         href={href}
+        target={external ? "_blank" : undefined}
+        rel={external ? "noopener noreferrer" : undefined}
         onClick={onClick}
         className={cn(baseStyles, variants[variant], className)}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
+        whileHover={disableInteractiveMotion ? undefined : { scale: 1.02 }}
+        whileTap={disableInteractiveMotion ? undefined : { scale: 0.98 }}
       >
         <span className="relative z-10 flex items-center gap-2">{children}</span>
-        {variant === "primary" && (
+        {variant === "primary" && !disableInteractiveMotion && (
           <motion.div
             className="absolute inset-0 bg-gradient-to-r from-primary via-orange-500 to-primary opacity-0"
             initial={{ opacity: 0 }}

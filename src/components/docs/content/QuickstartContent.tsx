@@ -28,7 +28,7 @@ export const QuickstartContent = () => {
         First, create a new project in the Tychee dashboard to get your project ID:
       </DocsP>
       <DocsUl>
-        <DocsLi>Visit <a href="https://app.tychee.store" className="text-primary hover:underline">app.tychee.store</a></DocsLi>
+        <DocsLi>Visit <a href="https://app.tychee.store" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">app.tychee.store</a></DocsLi>
         <DocsLi>Create a new project</DocsLi>
         <DocsLi>Copy your <DocsInlineCode>projectId</DocsInlineCode> from the settings page</DocsLi>
       </DocsUl>

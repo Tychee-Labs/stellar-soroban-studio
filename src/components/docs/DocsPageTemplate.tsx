@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { DocsTableOfContents } from "./DocsTableOfContents";
 import { DocsNavigation } from "./DocsNavigation";
-import { cn } from "@/lib/utils";
+import { cn, isExternalUrl } from "@/lib/utils";
 
 interface TocItem {
   id: string;
@@ -128,14 +128,19 @@ export const DocsInlineCode = ({ children }: { children: ReactNode }) => (
   </code>
 );
 
-export const DocsLink = ({ href, children }: { href: string; children: ReactNode }) => (
-  <a 
-    href={href} 
-    className="text-primary hover:text-primary/80 underline underline-offset-4 transition-colors"
-  >
-    {children}
-  </a>
-);
+export const DocsLink = ({ href, children }: { href: string; children: ReactNode }) => {
+  const external = isExternalUrl(href);
+  return (
+    <a
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className="text-primary hover:text-primary/80 underline underline-offset-4 transition-colors"
+    >
+      {children}
+    </a>
+  );
+};
 
 export const DocsTable = ({ children }: { children: ReactNode }) => (
   <div className="my-6 overflow-x-auto rounded-xl border border-border/50">

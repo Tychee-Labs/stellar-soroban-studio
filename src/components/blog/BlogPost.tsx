@@ -4,6 +4,7 @@ import { getBlogPostBySlug, blogPosts } from "@/lib/blog-data";
 import { Calendar, User, Clock, ChevronLeft, Share2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { useEffect } from "react";
+import { isExternalUrl } from "@/lib/utils";
 
 export const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -202,6 +203,18 @@ export const BlogPost = () => {
                       {...props}
                     />
                   ),
+                  a: ({ node, href, ...props }) => {
+                    const external = isExternalUrl(href);
+                    return (
+                      <a
+                        href={href}
+                        target={external ? "_blank" : undefined}
+                        rel={external ? "noopener noreferrer" : undefined}
+                        className="text-primary hover:text-primary/80 underline underline-offset-4"
+                        {...props}
+                      />
+                    );
+                  },
                 }}
               >
                 {post.content}
@@ -226,6 +239,7 @@ export const BlogPost = () => {
                     window.open(
                       `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(post.title)}`,
                       "_blank",
+                      "noopener,noreferrer",
                     );
                   }}
                   className="px-4 py-2 rounded-lg border border-border hover:border-primary/50 hover:bg-primary/5 transition-all flex items-center gap-2"
@@ -294,6 +308,8 @@ export const BlogPost = () => {
           </p>
           <a
             href="https://www.npmjs.com/package/@tychee/sdk"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block px-8 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-semibold"
           >
             Install SDK

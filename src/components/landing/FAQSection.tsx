@@ -169,6 +169,8 @@ export const FAQSection = () => {
             or{" "}
             <a
               href="https://discord.gg/A4vBgXda93"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-primary hover:underline font-medium link-underline"
             >
               join our Discord

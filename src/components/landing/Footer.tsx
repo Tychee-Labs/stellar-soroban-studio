@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, Twitter, Linkedin, MessageCircle } from "lucide-react";
+import { isExternalUrl } from "@/lib/utils";
 
 const footerLinks = {
   Product: [
@@ -84,18 +85,23 @@ export const Footer = () => {
 
             {/* Social icons */}
             <div className="flex items-center gap-3">
-              {socialLinks.map((social) => (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 rounded-lg bg-secondary border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/30 hover:bg-primary/5 transition-colors"
-                >
-                  <social.icon size={18} />
-                </motion.a>
-              ))}
+              {socialLinks.map((social) => {
+                const external = isExternalUrl(social.href);
+                return (
+                  <motion.a
+                    key={social.label}
+                    href={social.href}
+                    target={external ? "_blank" : undefined}
+                    rel={external ? "noopener noreferrer" : undefined}
+                    aria-label={social.label}
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-10 h-10 rounded-lg bg-secondary border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/30 hover:bg-primary/5 transition-colors"
+                  >
+                    <social.icon size={18} />
+                  </motion.a>
+                );
+              })}
             </div>
           </div>
 
@@ -106,18 +112,23 @@ export const Footer = () => {
                 {category}
               </h4>
               <ul className="space-y-3">
-                {links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors relative inline-block group"
-                    >
-                      {link.label}
-                      {/* Hover underline */}
-                      <span className="absolute bottom-0 left-0 w-full h-px bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
-                    </a>
-                  </li>
-                ))}
+                {links.map((link) => {
+                  const external = isExternalUrl(link.href);
+                  return (
+                    <li key={link.label}>
+                      <a
+                        href={link.href}
+                        target={external ? "_blank" : undefined}
+                        rel={external ? "noopener noreferrer" : undefined}
+                        className="text-sm text-muted-foreground hover:text-foreground transition-colors relative inline-block group"
+                      >
+                        {link.label}
+                        {/* Hover underline */}
+                        <span className="absolute bottom-0 left-0 w-full h-px bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

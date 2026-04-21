@@ -126,12 +126,53 @@ export const Header = () => {
             <MagneticButton variant="ghost" href="/docs">
               View Docs
             </MagneticButton>
-            <MagneticButton
-              variant="primary"
-              href="https://www.npmjs.com/package/@tychee/sdk"
-            >
-              Get Started
-            </MagneticButton>
+            <div className="relative inline-flex rounded-full">
+              <MagneticButton
+                variant="primary"
+                href="#waitlist"
+                disableInteractiveMotion
+                className="relative z-10 rounded-full border-0 bg-primary px-7 py-3.5 text-primary-foreground"
+              >
+                Join Waitlist
+              </MagneticButton>
+              <svg
+                aria-hidden="true"
+                className="pointer-events-none absolute -inset-[2px] z-20 h-[calc(100%+4px)] w-[calc(100%+4px)] overflow-visible"
+                viewBox="0 0 100 44"
+                preserveAspectRatio="none"
+              >
+                <rect
+                  x="1.1"
+                  y="1.1"
+                  width="97.8"
+                  height="41.8"
+                  rx="21"
+                  fill="none"
+                  stroke="rgba(242, 87, 43, 0.45)"
+                  strokeWidth="1.6"
+                />
+                <motion.rect
+                  x="1.1"
+                  y="1.1"
+                  width="97.8"
+                  height="41.8"
+                  rx="21"
+                  fill="none"
+                  stroke="url(#waitlistBorderDesktop)"
+                  strokeWidth="1.9"
+                  strokeLinecap="round"
+                  strokeDasharray="24 219"
+                  animate={{ strokeDashoffset: [0, -243] }}
+                  transition={{ duration: 2.2, ease: "linear", repeat: Infinity }}
+                />
+                <defs>
+                  <linearGradient id="waitlistBorderDesktop" x1="0%" y1="50%" x2="100%" y2="50%">
+                    <stop offset="0%" stopColor="#ffb37a" />
+                    <stop offset="100%" stopColor="#f2572b" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -181,12 +222,53 @@ export const Header = () => {
                 <MagneticButton variant="ghost" href="/docs">
                   View Docs
                 </MagneticButton>
-                <MagneticButton
-                  variant="primary"
-                  href="https://www.npmjs.com/package/@tychee/sdk"
-                >
-                  Get Started
-                </MagneticButton>
+                <div className="relative inline-flex w-fit self-start rounded-full">
+                  <MagneticButton
+                    variant="primary"
+                    href="#waitlist"
+                    disableInteractiveMotion
+                    className="relative z-10 rounded-full border-0 bg-primary px-7 py-3.5 text-primary-foreground"
+                  >
+                    Join Waitlist
+                  </MagneticButton>
+              <svg
+                aria-hidden="true"
+                className="pointer-events-none absolute -inset-[2px] z-20 h-[calc(100%+4px)] w-[calc(100%+4px)] overflow-visible"
+                viewBox="0 0 100 44"
+                preserveAspectRatio="none"
+              >
+                    <rect
+                      x="1.1"
+                      y="1.1"
+                      width="97.8"
+                      height="41.8"
+                      rx="21"
+                      fill="none"
+                      stroke="rgba(242, 87, 43, 0.45)"
+                      strokeWidth="1.6"
+                    />
+                    <motion.rect
+                      x="1.1"
+                      y="1.1"
+                      width="97.8"
+                      height="41.8"
+                      rx="21"
+                      fill="none"
+                      stroke="url(#waitlistBorderMobile)"
+                      strokeWidth="1.9"
+                      strokeLinecap="round"
+                      strokeDasharray="24 219"
+                      animate={{ strokeDashoffset: [0, -243] }}
+                      transition={{ duration: 2.2, ease: "linear", repeat: Infinity }}
+                    />
+                    <defs>
+                      <linearGradient id="waitlistBorderMobile" x1="0%" y1="50%" x2="100%" y2="50%">
+                        <stop offset="0%" stopColor="#ffb37a" />
+                        <stop offset="100%" stopColor="#f2572b" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
