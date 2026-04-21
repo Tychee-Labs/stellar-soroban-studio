@@ -86,7 +86,7 @@ export const Hero = () => {
             >
               <span className="text-foreground block">Securing Cards </span>
               <span className="text-foreground block">Globally.</span>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-orange-400 to-primary block pb-2">Powered by Self-Custody.</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-orange-400 to-primary block pb-2">Powered by Self Custody.</span>
             </motion.h1>
 
             {/* Subheadline */}
