@@ -129,7 +129,7 @@ export const Header = () => {
             <div className="relative inline-flex rounded-full">
               <MagneticButton
                 variant="primary"
-                href="#waitlist"
+                href="/#waitlist"
                 disableInteractiveMotion
                 className="relative z-10 rounded-full border-0 bg-primary px-7 py-3.5 text-primary-foreground"
               >
@@ -180,7 +180,7 @@ export const Header = () => {
             <div className="relative inline-flex rounded-full">
               <MagneticButton
                 variant="primary"
-                href="#waitlist"
+                href="/#waitlist"
                 disableInteractiveMotion
                 className="relative z-10 rounded-full border-0 bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground"
               >

@@ -41,7 +41,7 @@ export default function WaitlistForm() {
   };
 
   return (
-    <section id="waitlist" className="py-24 lg:py-32 relative overflow-hidden">
+    <section id="waitlist" className="scroll-mt-28 py-24 lg:py-32 relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
         {/* Primary glow orbs */}
